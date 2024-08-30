@@ -4,10 +4,11 @@
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dylan-mp4/react-icon-finder"},
+    "url": "https://github.com/dylan-mp4/react-icon-finder"
+  },
   "publisher": "Dylanmp4",
   "description": "Finds react icons and displays them for ease of use",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.92.0"
   },
@@ -15,7 +16,7 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
@@ -76,7 +77,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "build": "node esbuild.config.js"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.7",
@@ -84,6 +86,7 @@
     "@types/vscode": "^1.92.0",
     "@vscode/test-cli": "^0.0.9",
     "@vscode/test-electron": "^2.4.0",
+    "esbuild": "^0.23.1",
     "eslint": "^8.57.0",
     "sinon": "^18.0.0",
     "typescript": "^5.4.5"
