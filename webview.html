@@ -9,7 +9,7 @@
     .icon svg { width: 50px; height: 50px; }
     #search { margin-bottom: 20px; padding: 10px; width: 100%; box-sizing: border-box; }
     #pagination { margin-top: 20px; }
-    .page { cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; margin: 0 5px; display: inline-block; }
+    .page { cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; margin: 5px 5px; display: inline-block; }
 
 
     #loading,
@@ -111,6 +111,24 @@
           const iconPackage = icon.getAttribute('data-package');
           const importStatement = `import { ${iconName} } from 'react-icons/${iconPackage}';`;
           vscode.postMessage({ icon: importStatement });
+        });
+      });
+      filteredIcons.forEach(icon => {
+        icon.addEventListener('click', (event) => {
+          if (event.shiftKey) {
+            const svgElement = icon.querySelector('svg');
+            const svgContent = new XMLSerializer().serializeToString(svgElement);
+            navigator.clipboard.writeText(svgContent).then(() => {
+              vscode.postMessage({ message: 'SVG copied to clipboard' });
+            }).catch(err => {
+              console.error('Failed to copy SVG: ', err);
+            });
+          } else {
+            const iconName = icon.getAttribute('data-icon');
+            const iconPackage = icon.getAttribute('data-package');
+            const importStatement = `import { ${iconName} } from 'react-icons/${iconPackage}';`;
+            vscode.postMessage({ icon: importStatement });
+          }
         });
       });
 
