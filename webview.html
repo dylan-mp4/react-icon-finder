@@ -10,12 +10,52 @@
     #search { margin-bottom: 20px; padding: 10px; width: 100%; box-sizing: border-box; }
     #pagination { margin-top: 20px; }
     .page { cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; margin: 0 5px; display: inline-block; }
+
+
+    #loading,
+    #loading:after {
+      box-sizing: border-box;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #loading {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+    }
+    #loading:after {
+      content: " ";
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6.4px solid currentColor;
+      border-color: currentColor transparent currentColor transparent;
+      animation: loading 1.2s linear infinite;
+    }
+    @keyframes loading {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    #icons, #pagination{
+      display: none;
+    }
   </style>
 </head>
 <body>
+    <div id="loading"></div>
+
   <input type="text" id="search" placeholder="Search icons..." />
   <div id="icons"></div>
   <div id="pagination"></div>
+
   <script>
     const vscode = acquireVsCodeApi();
     const searchInput = document.getElementById('search');
@@ -73,6 +113,10 @@
           vscode.postMessage({ icon: importStatement });
         });
       });
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('icons').style.display = 'block';
+      document.getElementById('pagination').style.display = 'block';
     });
   </script>
 </body>
