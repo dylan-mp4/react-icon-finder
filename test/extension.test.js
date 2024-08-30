@@ -2,10 +2,8 @@ const vscode = require('vscode');
 const assert = require('assert');
 const { getAllIcons } = require('../iconHelper');
 const sinon = require('sinon');
-const fs = require('fs');
 const path = require('path');
-const ReactDOMServer = require('react-dom/server');
-const { activate, deactivate } = require('../extension');
+const { activate} = require('../extension');
 
 suite('Extension Test Suite', () => {
 	vscode.window.showInformationMessage('Start all tests.');
@@ -69,12 +67,12 @@ suite('Extension Test Suite', () => {
 	});
 
 	test('Icons are processed and sent to webview', async () => {
-		const createWebviewPanelStub = sinon.stub(vscode.window, 'createWebviewPanel').returns({
+		assert.ok(sinon.stub(vscode.window, 'createWebviewPanel').returns({
 			webview: {
 				html: '',
 				postMessage: sinon.stub(),
 				onDidReceiveMessage: sinon.stub()
 			}
-		});
+		}));
 	});
 });
