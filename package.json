@@ -7,7 +7,7 @@
     "url": "https://github.com/dylan-mp4/react-icon-finder"},
   "publisher": "Dylanmp4",
   "description": "Finds react icons and displays them for ease of use",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.92.0"
   },
