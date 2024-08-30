@@ -4,9 +4,10 @@ const { getAllIcons } = require('../iconHelper');
 const sinon = require('sinon');
 const path = require('path');
 const { activate} = require('../extension');
-const mocha = require('mocha');
-mocha.timeout(10000);
+
+
 suite('Extension Test Suite', () => {
+	this.timeout(10000);
 	vscode.window.showInformationMessage('Start all tests.');
 	test('getAllIcons returns an array', async () => {
 		const icons = await getAllIcons();
