@@ -6,6 +6,10 @@ A VSC extension to help find, search and copy React Icons all within VSC.
 ## Features
 ### Search and Copy import statement
 ![feature X](https://i.imgur.com/UoRqBfG.gif)
+## Left Click to copy Import statement e.g. 
+`import { FaAcquisitionsIncorporated } from 'react-icons/fa';`
+## Shift + Left Click to copy SVG e.g. 
+`<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M......"/></svg>`
 ### Add or Remove icon packages using the settings menu 
 
 ## Extension Settings
