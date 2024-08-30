@@ -32,5 +32,3 @@ jobs:
       run: sudo apt-get install xvfb
     - name: Run tests with xvfb
       run: xvfb-run --auto-servernum npm test
-    - name: Ensure clean exit
-      run: sudo killall Xvfb
