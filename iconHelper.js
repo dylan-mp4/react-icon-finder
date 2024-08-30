@@ -1,35 +1,13 @@
-const iconPackages = {
-  fa: () => import('react-icons/fa'),
-  md: () => import('react-icons/md'),
-  io: () => import('react-icons/io'),
-  ti: () => import('react-icons/ti'),
-  go: () => import('react-icons/go'),
-  fi: () => import('react-icons/fi'),
-  gi: () => import('react-icons/gi'),
-  wi: () => import('react-icons/wi'),
-  ai: () => import('react-icons/ai'),
-  bs: () => import('react-icons/bs'),
-  bi: () => import('react-icons/bi'),
-  ci: () => import('react-icons/ci'),
-  cg: () => import('react-icons/cg'),
-  di: () => import('react-icons/di'),
-  fa6: () => import('react-icons/fa6'),
-  gr: () => import('react-icons/gr'),
-  hi: () => import('react-icons/hi'),
-  hi2: () => import('react-icons/hi2'),
-  lia: () => import('react-icons/lia'),
-  io5: () => import('react-icons/io5'),
-  lu: () => import('react-icons/lu'),
-  pi: () => import('react-icons/pi'),
-  im: () => import('react-icons/im'),
-  rx: () => import('react-icons/rx'),
-  ri: () => import('react-icons/ri'),
-  si: () => import('react-icons/si'),
-  sl: () => import('react-icons/sl'),
-  tb: () => import('react-icons/tb'),
-  tfi: () => import('react-icons/tfi'),
-  vsc: () => import('react-icons/vsc'),
-};
+const iconKeys = [
+  'fa', 'md', 'io', 'ti', 'go', 'fi', 'gi', 'wi', 'ai', 'bs', 'bi', 'ci', 'cg', 
+  'di', 'fa6', 'gr', 'hi', 'hi2', 'lia', 'io5', 'lu', 'pi', 'im', 'rx', 'ri', 
+  'si', 'sl', 'tb', 'tfi', 'vsc'
+];
+
+const iconPackages = iconKeys.reduce((acc, key) => {
+  acc[key] = () => require(`react-icons/${key}`);
+  return acc;
+}, {});
 
 
 async function getAllIcons() {

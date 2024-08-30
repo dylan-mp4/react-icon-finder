@@ -2,7 +2,7 @@
   "name": "react-icon-finder",
   "displayName": "React Icon Finder",
   "description": "Finds react icons and displays them for ease of use",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.92.0"
   },
@@ -17,7 +17,51 @@
         "command": "react-icon-finder.findIcons",
         "title": "Find React Icons"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "iconHelper.iconKeys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "fa",
+            "md",
+            "io",
+            "ti",
+            "go",
+            "fi",
+            "gi",
+            "wi",
+            "ai",
+            "bs",
+            "bi",
+            "ci",
+            "cg",
+            "di",
+            "fa6",
+            "gr",
+            "hi",
+            "hi2",
+            "lia",
+            "io5",
+            "lu",
+            "pi",
+            "im",
+            "rx",
+            "ri",
+            "si",
+            "sl",
+            "tb",
+            "tfi",
+            "vsc"
+          ],
+          "markdownDescription": "Currently active icon packages. Find more on [React Icons](https://react-icons.github.io/react-icons) official website, then enter the character code here."
+        }
+      }
+    }
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -36,6 +80,7 @@
     "@vscode/test-cli": "^0.0.9",
     "@vscode/test-electron": "^2.4.0",
     "eslint": "^8.57.0",
+    "sinon": "^18.0.0",
     "typescript": "^5.4.5"
   }
 }
