@@ -1,6 +1,7 @@
 {
   "name": "react-icon-finder",
   "displayName": "React Icon Finder",
+  "icon": "images/icon.png",
   "description": "Finds react icons and displays them for ease of use",
   "version": "0.0.3",
   "engines": {
