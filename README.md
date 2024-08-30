@@ -1,3 +1,4 @@
+![Latest Build](https://github.com/dylan-mp4/react-icon-finder/actions/workflows/node.js.yml/badge.svg)
 # React Icon Finder README
 
 A VSC extension to help find, search and copy React Icons all within VSC.
