@@ -6,8 +6,9 @@ const path = require('path');
 const { activate} = require('../extension');
 
 
-suite('Extension Test Suite', () => {
+suite('Extension Test Suite', function() {
 	this.timeout(10000);
+	
 	vscode.window.showInformationMessage('Start all tests.');
 	test('getAllIcons returns an array', async () => {
 		const icons = await getAllIcons();
