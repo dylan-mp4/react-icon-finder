@@ -1,6 +1,6 @@
-# react-icon-finder README
+# React Icon Finder README
 
-This is the README for your extension "react-icon-finder". After writing up a brief description, we recommend including the following sections.
+A VSC extension to help find, search and copy React Icons all within VSC.
 
 ## Features
 

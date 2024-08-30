@@ -2,7 +2,7 @@
   "name": "react-icon-finder",
   "displayName": "React Icon Finder",
   "description": "Finds react icons and displays them for ease of use",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.92.0"
   },
